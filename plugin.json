@@ -1,0 +1,27 @@
+{
+  "name": "mytools-ocr",
+  "description": "讯飞 OCR",
+  "apiVersion": 1,
+  "main": "index.html",
+  "pluginName": "讯飞 OCR",
+  "version": "0.1.0",
+  "capabilities": [
+    "net.fetch",
+    "storage.get",
+    "storage.set",
+    "storage.del",
+    "clipboard.write"
+  ],
+  "features": [
+    {
+      "code": "ocr",
+      "explain": "打开讯飞 OCR",
+      "cmds": [
+        "OCR",
+        "文字识别",
+        "讯飞OCR",
+        "图片文字"
+      ]
+    }
+  ]
+}
