@@ -6,6 +6,7 @@
   "pluginName": "讯飞 OCR",
   "version": "0.1.0",
   "capabilities": [
+    "context.read",
     "net.fetch",
     "storage.get",
     "storage.set",

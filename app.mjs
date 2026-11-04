@@ -192,11 +192,20 @@ function renderHistory() {
     $("#history").append(b);
   }
 }
-ready(async () => {
+ready(async (env) => {
   const c = await call("storage.get", { key: "credentials" });
   if (c) {
     populate(c);
     $("#remember").checked = true;
   }
   status("请选择图片 · 需要自行开通讯飞印刷 / 手写文字识别 WebAPI");
+  const context = env?.launchContext ? await call("context.read", {types:["image"]}) : null;
+  if (context?.image?.dataUrl) {
+    image = context.image.dataUrl;
+    fileName = "面板传入的剪贴板图片";
+    $("#image").src = image;
+    $("#image").hidden = false;
+    tab("recognize");
+    status("已载入截图，点击识别开始处理");
+  }
 });
